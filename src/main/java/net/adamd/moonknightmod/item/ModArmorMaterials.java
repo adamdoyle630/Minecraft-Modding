@@ -9,9 +9,10 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.jetbrains.annotations.NotNull;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-  KEVLAR("kevlar", 37, new int[]{10, 10, 10, 10}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F,
+  KEVLAR("kevlar", 50, new int[]{10, 10, 10, 10}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F,
       () -> Ingredient.of(Items.NETHERITE_INGOT)); // change to kevlar material
 
   private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -49,15 +50,15 @@ public enum ModArmorMaterials implements ArmorMaterial {
     return this.enchantmentValue;
   }
 
-  public SoundEvent getEquipSound() {
+  public @NotNull SoundEvent getEquipSound() {
     return this.sound;
   }
 
-  public Ingredient getRepairIngredient() {
+  public @NotNull Ingredient getRepairIngredient() {
     return this.repairIngredient.get();
   }
 
-  public String getName() {
+  public @NotNull String getName() {
     return MoonKnightMod.MOD_ID + ":" + this.name;
   }
 
