@@ -13,15 +13,9 @@ import org.jetbrains.annotations.NotNull;
 public class SuitItem extends Item {
 
   private static SuitItem suitItem = null;
+  private Player player;
 
-  public static SuitItem get() {
-    if (suitItem == null) {
-      suitItem = new SuitItem(new Item.Properties().stacksTo(1));
-    }
-    return suitItem;
-  }
-
-  private SuitItem(Properties pProperties) {
+  public SuitItem(Properties pProperties) {
     super(pProperties);
   }
 
@@ -29,6 +23,7 @@ public class SuitItem extends Item {
   public @NotNull InteractionResult useOn(UseOnContext pContext) {
     if (pContext.getLevel().isClientSide()) {
       Player player = pContext.getPlayer();
+
     }
     return super.useOn(pContext);
   }

@@ -4,8 +4,6 @@ import net.adamd.moonknightmod.MoonKnightMod;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.TieredItem;
-import net.minecraft.world.item.TridentItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,6 +32,9 @@ public class ModItems {
   public static final RegistryObject<Item> KEVLAR_BOOTS = ITEMS.register("kevlar_boots",
       () -> new ArmorItem(ModArmorMaterials.KEVLAR, EquipmentSlot.FEET,
           new Item.Properties().tab(ModCreativeModeTab.MOD_TAB)));
+
+  public static final RegistryObject<Item> SUIT_ITEM = ITEMS.register("suit",
+      () -> new SuitItem(new Item.Properties().tab(ModCreativeModeTab.MOD_TAB)));
 
   public static void register(IEventBus eventBus) {
     ITEMS.register(eventBus);
